@@ -125,9 +125,10 @@ Use the following command to install calio:
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 ## Verify Installation
+```
 Verify that all the pods are up and running:
 
-a) kubectl get nodes > Ready means all good
+a) kubectl get nodes                           > Ready means all good
 ```
 kubectl get pods --all-namespaces
 ```
