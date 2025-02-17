@@ -99,7 +99,7 @@ Add some settings to sysctl
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
 ## Initialize the Cluster (Run only on master)
-Use the following command to initialize the cluster:
+Use the following command to initialize the cluster If you normal user:
 ```
 sudo kubeadm init --ignore-preflight-errors=all
 ```
@@ -117,6 +117,12 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 Change ownership of the file:
 ```
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+Alternatively, if you are the root user, you can run:
+
+```
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
 ```
 
 ## Install Calio (Run only on master)
