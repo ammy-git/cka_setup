@@ -80,6 +80,8 @@ Disable swap using the following command:
 
 ```
 sudo swapoff -a
+sudo apt install sed -y
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 If there are any swap entries in the /etc/fstab file, remove them using a text editor such as nano:
