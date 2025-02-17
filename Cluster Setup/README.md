@@ -99,7 +99,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 ## Initialize the Cluster (Run only on master)
 Use the following command to initialize the cluster:
 ```
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init --ignore-preflight-errors=all
 ```
 
 Create a .kube directory in your home directory:
