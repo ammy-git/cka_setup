@@ -118,7 +118,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ## Install Calio (Run only on master)
-Use the following command to install Flannel:
+Use the following command to install calio:
 ```
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
