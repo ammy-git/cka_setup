@@ -12,7 +12,7 @@ Before starting the installation process, ensure that the following prerequisite
 - The servers have network connectivity to each other.
 - You have root access to each server.
 
-## Installation Steps
+## Installation Steps (Run all command on master and Worker, Except init and tocken create command on Master)
 The following are the step-by-step instructions for setting up a multi-node Kubernetes cluster using Kubeadm:
 
 Update the system's package list and install necessary dependencies using the following commands:
@@ -45,7 +45,7 @@ sudo containerd config default | sudo tee /etc/containerd/config.toml
 Edit the containerd configuration file to set SystemdCgroup to true. Use the following command to open the file:
 
 ```
-sudo nano /etc/containerd/config.toml
+sudo vim /etc/containerd/config.toml
 ```
 
 Set SystemdCgroup to true:
@@ -133,11 +133,13 @@ kubectl get pods --all-namespaces
 ```
 ## Join Worker Nodes
 Generate the join command on the master node:
+```
 sudo kubeadm token create --print-join-command
-
+```
 Example output:
 
+```
 sudo kubeadm join 172.31.33.66:6443 --token qg5kgy.o1ov92iu7d50dkye --discovery-token-ca-cert-hash sha256:e3f0feef4ad831253c3535f72e17c3bddc0c631e789c621f7a130e7e798aa313
-
+```
 Run the join command on each worker node to connect them to the cluster.
 
