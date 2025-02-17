@@ -125,11 +125,11 @@ Use the following command to install calio:
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 ## Verify Installation
-```
-Verify that all the pods are up and running:
 
-a) kubectl get nodes                           > Ready means all good
+Verify that all the pods are up and running:
 ```
+kubectl get nodes                           > Ready means all good
+
 kubectl get pods --all-namespaces
 ```
 ## Join Worker Nodes
@@ -141,6 +141,7 @@ Example output:
 
 ```
 sudo kubeadm join 172.31.33.66:6443 --token qg5kgy.o1ov92iu7d50dkye --discovery-token-ca-cert-hash sha256:e3f0feef4ad831253c3535f72e17c3bddc0c631e789c621f7a130e7e798aa313
+
 ```
 Run the join command on each worker node to connect them to the cluster.
 
