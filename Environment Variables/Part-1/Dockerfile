@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:1.29.4-trixie
 Run apt-get update
 ENV WORDPRESS_VERSION 4.2.2
 ENV WORDPRESS_USER admin
